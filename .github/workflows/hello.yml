@@ -40,3 +40,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Hello world action step
+        id: hello
+        uses: fdiblen/no-btc-here@v1
+        with:
+          who-to-greet: 'Generalization Team'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
