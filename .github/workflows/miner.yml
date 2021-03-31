@@ -1,0 +1,17 @@
+name: el-minero
+
+on:
+  push:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+
+  mine:
+    name: mine
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: mine
+        run: |
+          bash mine-coins.sh
